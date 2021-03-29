@@ -6,6 +6,7 @@ from config.config import TestData
 
 @pytest.fixture(params=["chrome", "firefox"], scope='class')
 def init__driver(request):
+    global web_driver
     if request.param == 'chrome':
         #web_driver = webdriver.Chrome(ChromeDriverManager().install())
         web_driver = webdriver.Chrome(executable_path=TestData.CHROME_BROWSER)

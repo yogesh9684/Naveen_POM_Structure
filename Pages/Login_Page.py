@@ -1,6 +1,7 @@
 import pytest
 from selenium.webdriver.common.by import By
 from Pages.Base_Page import BasePage
+from Pages.Home_Page import HomePage
 from config.config import TestData
 
 
@@ -27,3 +28,4 @@ class LoginPage(BasePage):
         self.send_keys(self.Email_Field , username)
         self.send_keys(self.Password_Filed , password)
         self.click_element(self.Click_On_Sign_In)
+        return HomePage(self.driver)

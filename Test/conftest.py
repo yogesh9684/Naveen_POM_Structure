@@ -4,7 +4,7 @@ from config.config import TestData
 
 '''Defined which browser to be used for Testing'''
 
-@pytest.fixture(params=["chrome", "firefox"], scope='class')
+@pytest.fixture(params=["chrome"], scope='class')
 def init__driver(request):
     global web_driver
     if request.param == 'chrome':
